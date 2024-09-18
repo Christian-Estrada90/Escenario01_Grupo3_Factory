@@ -20,7 +20,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         vehiculos = new Vector<>();
 
         // Acción para el botón "Agregar Vehiculo"
-        btn_Agregar_Vehiculo.addActionListener(new ActionListener() {
+        btnAgregarVehiculo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 agregarVehiculo();
@@ -28,18 +28,18 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
 
         // Ajustar el tamaño del JComboBox
-        cmb_tipoVehiculo.setPreferredSize(new java.awt.Dimension(200, cmb_tipoVehiculo.getPreferredSize().height));
+        cmbTipoVehiculo.setPreferredSize(new java.awt.Dimension(200, cmbTipoVehiculo.getPreferredSize().height));
     }
 
     private void agregarVehiculo() {
         try {
-            String tipoVehiculo = (String) cmb_tipoVehiculo.getSelectedItem();
-            String marca = txt_marca.getText();
-            String modelo = txt_modelo.getText();
-            String placa = txt_placa.getText();
-            int cilindraje = Integer.parseInt(txt_cilindraje.getText());
-            double avaluo = Double.parseDouble(txt_avaluo.getText());
-            double impuesto = Double.parseDouble(txt_impuesto.getText());
+            String tipoVehiculo = (String) cmbTipoVehiculo.getSelectedItem();
+            String marca = txtMarca.getText();
+            String modelo = txtModelo.getText();
+            String placa = txtPlaca.getText();
+            int cilindraje = Integer.parseInt(txtCilindraje.getText());
+            double avaluo = Double.parseDouble(txtAvaluo.getText());
+            double impuesto = Double.parseDouble(txtImpuesto.getText());
 
             // Creación del vehículo utilizando la fábrica
             VehiculoFactory vehiculoFactory = new VehiculoFactory();
@@ -56,12 +56,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
             actualizarTabla();
 
             // Limpiar los campos de texto
-            txt_marca.setText("");
-            txt_modelo.setText("");
-            txt_placa.setText("");
-            txt_cilindraje.setText("");
-            txt_avaluo.setText("");
-            txt_impuesto.setText("");
+            txtMarca.setText("");
+            txtModelo.setText("");
+            txtPlaca.setText("");
+            txtCilindraje.setText("");
+            txtAvaluo.setText("");
+            txtImpuesto.setText("");
 
             JOptionPane.showMessageDialog(this, "Vehículo agregado exitosamente.");
         } catch (NumberFormatException e) {
@@ -88,43 +88,43 @@ public class MenuPrincipal extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     private void initComponents() {
 
-        cmb_tipoVehiculo = new javax.swing.JComboBox<>();
-        jLabel1 = new javax.swing.JLabel();
-        btn_Agregar_Vehiculo = new javax.swing.JButton();
-        txt_marca = new javax.swing.JTextField();
-        txt_modelo = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        txt_placa = new javax.swing.JTextField();
+        cmbTipoVehiculo = new javax.swing.JComboBox<>();
+        lblTipoVehiculo = new javax.swing.JLabel();
+        btnAgregarVehiculo = new javax.swing.JButton();
+        txtMarca = new javax.swing.JTextField();
+        txtModelo = new javax.swing.JTextField();
+        lblMarca = new javax.swing.JLabel();
+        lblModelo = new javax.swing.JLabel();
+        lblPlaca = new javax.swing.JLabel();
+        txtPlaca = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        lbl_cilindraje = new javax.swing.JLabel();
-        txt_cilindraje = new javax.swing.JTextField();
-        lbl_avaluo = new javax.swing.JLabel();
-        txt_avaluo = new javax.swing.JTextField();
-        lbl_impuesto = new javax.swing.JLabel();
-        txt_impuesto = new javax.swing.JTextField();
+        lblCilindraje = new javax.swing.JLabel();
+        txtCilindraje = new javax.swing.JTextField();
+        lblAvaluo = new javax.swing.JLabel();
+        txtAvaluo = new javax.swing.JTextField();
+        lblImpuesto = new javax.swing.JLabel();
+        txtImpuesto = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        cmb_tipoVehiculo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "auto", "camioneta", "camion" }));
+        cmbTipoVehiculo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "auto", "camioneta", "camion" }));
 
-        jLabel1.setText("Tipo Vehiculo:");
+        lblTipoVehiculo.setText("Tipo Vehiculo:");
 
-        btn_Agregar_Vehiculo.setText("Agregar Vehiculo");
+        btnAgregarVehiculo.setText("Agregar Vehiculo");
 
-        jLabel2.setText("Marca:");
+        lblMarca.setText("Marca:");
 
-        jLabel3.setText("Modelo:");
+        lblModelo.setText("Modelo:");
 
-        jLabel4.setText("Placa:");
+        lblPlaca.setText("Placa:");
 
-        lbl_cilindraje.setText("Cilindraje:");
+        lblCilindraje.setText("Cilindraje:");
 
-        lbl_avaluo.setText("Avalúo:");
+        lblAvaluo.setText("Avalúo:");
 
-        lbl_impuesto.setText("Impuesto:");
+        lblImpuesto.setText("Impuesto:");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {},
@@ -146,23 +146,23 @@ public class MenuPrincipal extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4)
-                                    .addComponent(lbl_cilindraje)
-                                    .addComponent(lbl_avaluo)
-                                    .addComponent(lbl_impuesto))
+                                    .addComponent(lblTipoVehiculo)
+                                    .addComponent(lblMarca)
+                                    .addComponent(lblModelo)
+                                    .addComponent(lblPlaca)
+                                    .addComponent(lblCilindraje)
+                                    .addComponent(lblAvaluo)
+                                    .addComponent(lblImpuesto))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(cmb_tipoVehiculo, 0, 200, Short.MAX_VALUE)
-                                    .addComponent(txt_marca)
-                                    .addComponent(txt_modelo)
-                                    .addComponent(txt_placa)
-                                    .addComponent(txt_cilindraje)
-                                    .addComponent(txt_avaluo)
-                                    .addComponent(txt_impuesto)))
-                            .addComponent(btn_Agregar_Vehiculo))
+                                    .addComponent(cmbTipoVehiculo, 0, 200, Short.MAX_VALUE)
+                                    .addComponent(txtMarca)
+                                    .addComponent(txtModelo)
+                                    .addComponent(txtPlaca)
+                                    .addComponent(txtCilindraje)
+                                    .addComponent(txtAvaluo)
+                                    .addComponent(txtImpuesto)))
+                            .addComponent(btnAgregarVehiculo))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -171,34 +171,34 @@ public class MenuPrincipal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(cmb_tipoVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblTipoVehiculo)
+                    .addComponent(cmbTipoVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txt_marca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblMarca)
+                    .addComponent(txtMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txt_modelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblModelo)
+                    .addComponent(txtModelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(txt_placa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblPlaca)
+                    .addComponent(txtPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_cilindraje)
-                    .addComponent(txt_cilindraje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblCilindraje)
+                    .addComponent(txtCilindraje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_avaluo)
-                    .addComponent(txt_avaluo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblAvaluo)
+                    .addComponent(txtAvaluo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_impuesto)
-                    .addComponent(txt_impuesto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblImpuesto)
+                    .addComponent(txtImpuesto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btn_Agregar_Vehiculo)
+                .addComponent(btnAgregarVehiculo)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 275, Short.MAX_VALUE)
                 .addContainerGap())
@@ -215,21 +215,21 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
     }
                    
-    private javax.swing.JButton btn_Agregar_Vehiculo;
-    private javax.swing.JComboBox<String> cmb_tipoVehiculo;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JButton btnAgregarVehiculo;
+    private javax.swing.JComboBox<String> cmbTipoVehiculo;
+    private javax.swing.JLabel lblTipoVehiculo;
+    private javax.swing.JLabel lblMarca;
+    private javax.swing.JLabel lblModelo;
+    private javax.swing.JLabel lblPlaca;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField txt_marca;
-    private javax.swing.JTextField txt_modelo;
-    private javax.swing.JTextField txt_placa;
-    private javax.swing.JLabel lbl_cilindraje;
-    private javax.swing.JTextField txt_cilindraje;
-    private javax.swing.JLabel lbl_avaluo;
-    private javax.swing.JTextField txt_avaluo;
-    private javax.swing.JLabel lbl_impuesto;
-    private javax.swing.JTextField txt_impuesto;    
+    private javax.swing.JTextField txtMarca;
+    private javax.swing.JTextField txtModelo;
+    private javax.swing.JTextField txtPlaca;
+    private javax.swing.JLabel lblCilindraje;
+    private javax.swing.JTextField txtCilindraje;
+    private javax.swing.JLabel lblAvaluo;
+    private javax.swing.JTextField txtAvaluo;
+    private javax.swing.JLabel lblImpuesto;
+    private javax.swing.JTextField txtImpuesto;    
 }

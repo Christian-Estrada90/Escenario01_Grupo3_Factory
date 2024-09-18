@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package ec.edu.ups.patron.creacional.factory.model;
 
 /**
@@ -13,7 +9,8 @@ public class Auto extends Vehiculo{
   
     @Override
     public double costoMatricula() {
-        return (this.getAvaluo() + this.getImpuesto() + this.getCilindraje()) * 5;
+    	double resultado = (this.getAvaluo() / ((this.getCilindraje() / this.getImpuesto()) * 0.5));
+	    return Math.round(resultado * 100.0) / 100.0;
     }
     
 }
